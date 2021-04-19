@@ -1,0 +1,8 @@
+{
+  "name": "Firesome",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "7cdb027b"
+}
