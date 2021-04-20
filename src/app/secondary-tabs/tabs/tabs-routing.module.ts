@@ -8,21 +8,16 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'downloads',
         loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
       },
       {
-        path: 'tab2',
+        path: 'configs',
         loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
-        path: 'tab3',
+        path: 'gallery',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-      },
-      {
-        path: '',
-        redirectTo: '/tabs/tab2',
-        pathMatch: 'full'
       }
     ]
   },
@@ -31,28 +26,32 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1_main',
-        loadChildren: () => import('../../primary-tab/tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'about',
+        loadChildren: () => import('../../primary-tabs/tab1/tab1.module').then(m => m.Tab1PageModule)
       },
       {
-        path: 'tab2_main',
-        loadChildren: () => import('../../primary-tab/tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'tutorials',
+        loadChildren: () => import('../../primary-tabs/tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
-        path: 'tab3_main',
-        loadChildren: () => import('../../primary-tab/tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'home',
+        loadChildren: () => import('../../primary-tabs/tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
-        path: 'tab4_main',
-        loadChildren: () => import('../../primary-tab/tab4/tab4.module').then(m => m.Tab4PageModule)
+        path: 'socialize',
+        loadChildren: () => import('../../primary-tabs/tab4/tab4.module').then(m => m.Tab4PageModule)
       },
       {
-        path: '',
-        redirectTo: '../../primary-tab/tab3/tab3.module',
-        pathMatch: 'full'
+        path: 'extras',
+        loadChildren: () => import('../../primary-tabs/tab5/tab5.module').then(m => m.Tab5PageModule)
       }
     ]
   },
+  {
+    path: '',
+    redirectTo: '/tabs/home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
